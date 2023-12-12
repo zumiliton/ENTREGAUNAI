@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CHECK OUT</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/chekout.css' %}">
+</head>
+<body>
+	 <header>
+            <nav role="navigation">
+              <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                  <a href="#" id="inicio"><li>INICIO</li></a>
+                  <a href="{% url 'datos_usuario' %}" id="perfil"><li>PERFIL</li></a>
+                  <a href="#" id="logout"><li>LOGOUT</li></a>
+                </ul>
+              </div>
+            </nav>
+             
+    </header>
+    <main>
+        <div class="logo">    <img src="{% static 'IMAGES/san_logo.png' %}" alt="SANBURGER">
+        </div>
+        <br>
+        <br>
+        <div class="card">
+            <h1>FINALIZAR COMPRA</h1>
+            <div class="titulos">
+                <h2 class="carr">PRODUCTOS SELECCIONADOS:</h2>
+                <h2 class="data">DATOS COMPRA: </h2>
+                <div>
+                    
+                </div>
+            </div>
+          	<div class="grap">
+                <div class="contenedor">
+                {%for c,v in carrito.items%}
+                    <div class="producto">
+                        <div class="pic">
+                            <a href=""><img src="{{v.url}}" alt="SANBURGER"></a>
+                        </div>
+                        <div class="burger">
+                            <h4 class="nombre">{{c}}({{v.cantidad}}) <b>{{v.importe}}</b></h4>
+                        </div>
+                    </div>
+                    {%empty%}
+                        <h1>No hay categorias</h1>
+                    {%endfor%}
+            </div>
+            <div class="data-container">
+                <h2>DIRECCIONDE ENVIO: </h2>
+                <h3>{{user.domicilio}}</h3>
+                <h2>NUMERO DE TELEFONO: </h2>
+                <h3>{{user.telefono}}</h3>
+                <h2>NUMERO DE TARJETA: </h2>
+                <h3>{{user.numero_tarjeta}}</h3>
+                <h2>CADUCIDAD DE TARJETA: </h2>
+                <h3>{{user.caducidad_tarjeta}}</h3>
+                
+            </div>
+                
+            </div>
+            <div class="button-cont">
+                <button class="left" onclick="cancelar_pedido()">CANCELAR PEDIDO</button>
+                <button class="right" onclick="finalizar_pedido()">PAGAR</button>
+            </div>
+            
+        </div> 
+    </main>
+    <div class="fooler"></div>
+    <div class="footer">&copy;<span id="year"> </span><span> Deusto.Todos los derechos reservados.</span></div>
+</body>
+    <script type="text/javascript">
+        function cancelar_pedido() {
+            var confirmacion = confirm('¿Estas seguro que desea cancelar el pedido?');
+            if (confirmacion) {
+                var url ="{% url 'calidad'%}";            
+                window.location.href = url;
+                alert("Pedido Cancelado")
+            } 
+            else {
+                alert('Operacion cancelada,pedido en pie');
+            }
+        }
+        function finalizar_pedido() {
+            var url ="{% url 'pago_final' establecimiento%}";            
+            window.location.href = url;
+
+        }
+    </script>
+    <script type="text/javascript">
+        var inicio = document.getElementById('inicio');
+        inicio.addEventListener('click', function(event) {
+            var confirmacion = confirm('¿Si sale a inicio se perdera el pedido,esta seguro de salir?');
+            if (confirmacion) {
+                var url ="{% url 'calidad'%}";            
+                window.location.href = url;
+            }else{
+                alert('Operación cancelada');
+            }
+
+        });
+    </script>
+    <script type="text/javascript">
+        var salir = document.getElementById('logout');
+        salir.addEventListener('click', function(event) {
+            var confirmacion = confirm('¿Estas seguro que desas salir de SANBURGER?');
+            if (confirmacion) {
+                var url ="{% url 'logout'%}";            
+                window.location.href = url;
+            } 
+            else {
+                alert('Operación cancelada');
+            }
+        });
+    </script>
+   
+</html>

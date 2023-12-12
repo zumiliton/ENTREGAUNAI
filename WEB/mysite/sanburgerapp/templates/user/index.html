@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-20">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de usuario</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+
+<body>
+
+    <header>
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                    <a href="{% url 'home' %}" id="inicio"><li>HOME</li></a>
+                    <a href="{% url 'login' %}" id= "login"><li>INICIAR SESION</li></a>
+                    <a href="{% url 'registro' %}" id="registro"><li>REGISTRARME</li></a>
+                    <a href="{% url 'info' %}" id=""><li>INFORMACION SANBURGER</li></a>
+                    <a href="{% url 'contacto' %}" id="contacto"><li>CONTACTANOS</li></a>
+                    <a href="{% url 'chat' %}"><li>INICIA UN CHAT</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="logo"> <img src="../static/IMAGES/san_logo.png" alt="SANBURGER"></div>
+        <br>
+        <h1 class="p-title">CHATEA CON NOSOTROS</h1>
+        <div class="wrapper">
+        
+        <header class="clearfix">
+
+            <h4>CHATEA CON NOSOTROS</h4>
+
+            <span class="chat-message-counter">3</span>
+
+        </header>
+
+        <div class="chat">
+            
+            <div id="history" class="chat-history">
+                
+                <div class="chat-message clearfix">
+                    
+
+                    <div class="chat-message-content clearfix">
+                        
+                        <span class="chat-time">13:35</span>
+
+                        <h5>MANUEL GARCES</h5>
+
+                        <p>¿QUE PASA AMIGO EN QUE PUEDO AYUDARTE?</p>
+
+                    </div> 
+
+                </div> 
+
+                <hr>
+
+
+                <hr>
+
+                <hr>
+
+            </div>
+
+            <p class="chat-feedback"></p>
+
+                <fieldset>
+                    
+                    <input id="entered" type="text" placeholder="Escribe tu mensaje aqui" autofocus>
+                    <button class="enviar" id="send" >ENVIAR</button>
+
+                </fieldset>
+
+
+        </div> <!-- end chat -->
+
+
+            
+        </div>
+    </main>
+    <div class="footer">&copy;<span id="year"> </span><span> Deusto.Todos los derechos reservados.</span></div>
+
+</body>
+
+<script type="module" src="{% static 'JS/script.js' %}"></script>
+
+</html>

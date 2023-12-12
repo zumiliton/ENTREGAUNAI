@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-20">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de usuario</title>
+    <link rel="stylesheet" type="text/css" href="../static/CSS/user_profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+
+<body>
+
+    <header>
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                    <a href="{% url 'calidad'%}" id="inicio">
+                        <li>INICIO</li>
+                    </a>
+                    <a href="" id="perfil">
+                        <li>PERFIL</li>
+                    </a>
+                    <a href="{% url 'logout' %}" id="logout">
+                        <li>LOGOUT</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="logo"> <img src="../static/IMAGES/san_logo.png" alt="SANBURGER"></div>
+        <br>
+        <h1 class="p-title">ACTUALIZAR DATOS PERFIL</h1>
+        <div class="wrapper">
+            <h2>Perfil de {{ formulario.instance.user.username}} </h2>
+            <div id="app">
+                <p v-if={{error}} id="vue-alert">{{texto_error}}</p>
+            </div>
+            <form method="post" action="{% url 'datos_usuario' %}">
+                {% csrf_token %}
+                <div class="form-container">
+                    <div class="up-wrap">
+                    <ul>
+                        <li>Edad: {{ formulario.edad.value}}
+                            <div class="input-box">
+                                <input type="number" name="edad" placeholder="Introduce tu edad"><br>
+                            </div>
+                        </li>
+                        <li>Telefono: {{ formulario.telefono.value }}
+                            <div class="input-box">
+                                <input type="number" name="telefono" placeholder="Introduce tu numero de telefono:"><br>
+                            </div>
+                        </li>
+                        <li>Correo electronico: {{ formulario.correo.value }}
+                            <div class="input-box">
+                                <input type="text" name="correo" placeholder="Introduce tu correo electronico:" maxlength="30"><br>
+                            </div>
+                        </li>
+                        <li>Domicilio: {{ formulario.domicilio.value }}
+                            <div class="input-box">
+                                <input type="text" name="domicilio" placeholder="Introduce tu domicilio" maxlength="20"><br>
+                            </div>
+                        </li>
+                    </div>
+                    <div class="down-wrapper">
+                        <li>Numero de la tarjeta: {{ formulario.numero_tarjeta.value }}
+                            <div class="input-box">
+                                <input type="number" name="numero_tarjeta" placeholder="Introduce el numero de la tarjeta:"><br>
+                            </div>
+                        </li>
+                        <li>Titular de la tarjeta: {{ formulario.titular_tarjeta.value }}
+                            <div class="input-box">
+                                <input type="text" name="titular_tarjeta" placeholder="Introduce el titular de la tarjeta:" maxlength="30"><br>
+                            </div>
+                        </li>
+                        <li>Fecha de caducidad de la tarjeta: {{ formulario.caducidad_tarjeta.value }}
+                            <div class="input-box">
+                                <input type="date" name="caducidad_tarjeta" placeholder="Introduce la fecha de caducidad de la tarjeta:"><br>
+                            </div>
+                        </li>
+                        <li>CVV de la tarjeta: {{ formulario.cvv_tarjeta.value }}
+                            <div class="input-box">
+                                <input type="number" name="cvv_tarjeta" placeholder="Introduce el CVV:" maxlength="30"><br>
+                            </div>
+                        </li>
+                        </div>
+                    </ul>
+                </div>
+                    <button type="submit" class="btn btn-primary btn-block btn-large" onclick="alert_exit()">ACTUALIZAR DATOS</button>
+                </div>
+            </form>
+            
+        </div>
+    </main>
+    <div class="footer">&copy;<span id="year"> </span><span> Deusto.Todos los derechos reservados.</span></div>
+
+</body>
+<script type="text/javascript">
+    function alert_exit(argument) {
+        alert("DATOS ACTUALIZADOS CON EXITO")
+    }
+</script>
+<!-- <script type="text/javascript">
+    var salir = document.getElementById('logout');
+    salir.addEventListener('click', function(event) {
+        var confirmacion = confirm('¿Estas seguro que desas salir de SANBURGER?');
+        if (confirmacion) {
+            var url ="{% url 'logout' %}";            
+            window.location.href = url;
+        } 
+        else {
+            alert('Operación cancelada');
+        }
+        });
+</script> -->
+    <!-- <script type="text/javascript">
+        var inicio = document.getElementById('inicio');
+        inicio.addEventListener('click', function(event) {
+            alert("hii")
+            var url ="{% url 'calidad'%}";            
+            window.location.href = url;
+        });
+    </script>
+ -->
+
+</html>

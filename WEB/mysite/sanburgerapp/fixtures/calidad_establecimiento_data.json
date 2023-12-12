@@ -1,0 +1,30 @@
+[
+  {
+    "model": "sanburgerapp.calidad_establecimiento",
+    "pk": 1,
+    "fields": {
+      "nombre": "Prime"
+    }
+  },
+  {
+    "model": "sanburgerapp.calidad_establecimiento",
+    "pk": 2,
+    "fields": {
+      "nombre": "SUBPRIME"
+    }
+  },
+  {
+    "model": "sanburgerapp.calidad_establecimiento",
+    "pk": 3,
+    "fields": {
+      "nombre": "ESTANDAR"
+    }
+  },
+  {
+    "model": "sanburgerapp.calidad_establecimiento",
+    "pk": 3,
+    "fields": {
+      "nombre": "BajoMundo"
+    }
+  }
+]

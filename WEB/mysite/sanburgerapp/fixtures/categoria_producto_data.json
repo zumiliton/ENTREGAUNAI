@@ -1,0 +1,30 @@
+[
+{
+  "model": "sanburgerapp.categoria_producto",
+  "pk": 1,
+  "fields": {
+    "nombre": "Carne"
+  }
+},
+{
+  "model": "sanburgerapp.categoria_producto",
+  "pk": 2,
+  "fields": {
+    "nombre": "KMCERO"
+  }
+},
+{
+  "model": "sanburgerapp.categoria_producto",
+  "pk": 3,
+  "fields": {
+    "nombre": "SMASH"
+  }
+},
+{
+  "model": "sanburgerapp.categoria_producto",
+  "pk": 4,
+  "fields": {
+    "nombre": "POLLO"
+  }
+}
+]

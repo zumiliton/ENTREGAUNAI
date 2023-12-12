@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Categorias de Establecimientos</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/bar_categories.css' %}">   
+</head>
+<body>
+	<header>
+           
+            <nav role="navigation">
+              <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                  <a href="#"><li>INICIO</li></a>
+                  <a href="{% url 'datos_usuario'%}"><li>PERFIL</li></a>
+                  <a href="#" id="logout"><li>LOGOUT</li></a>
+                </ul>
+              </div>
+            </nav>
+        </header>
+
+        <main class="center">
+            <div class="logo">    <img src="../../static/IMAGES/san_logo.png" alt="SANBURGER"></div>
+            <br>
+            <br>
+            <div class="titulo">
+            	<h2>
+            		CATEGORIAS DE ESTABLECIMIENTOS
+            	</h2>
+            </div>
+            <div class="categorias">
+            	{%for c in lista_categorias%}
+            		<div class="calidad_contenedor">
+            			<a id="categorias" name="{{c.nombre}}" href="{% url 'bares' c.nombre%}">{{c.nombre}}</a>
+            		</div>
+            	{%empty%}
+            		<h1>No hay categorias</h1>
+            	{%endfor%}
+            </div>
+        </main>
+        <div class="footer">&copy;<span id="year"> </span><span> Deusto.Todos los derechos reservados.</span></div>
+
+</body>
+	<script type="text/javascript">
+		var salir = document.getElementById('logout');
+  		salir.addEventListener('click', function(event) {
+    		var confirmacion = confirm('¿Estas seguro que desas salir de SANBURGER?');
+   			if (confirmacion) {
+   				var url ='logout';            
+        		window.location.href = url;
+    		} 
+    		else {
+      			alert('Operación cancelada');
+    		}
+  		});
+	</script>
+</html>

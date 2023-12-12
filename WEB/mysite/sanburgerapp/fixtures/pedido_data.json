@@ -1,0 +1,497 @@
+[
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 1,
+  "fields": {
+    "producto": [
+      {
+        "nombre_producto": "Hamburguesa Cl�sica",
+        "pan": "Brioche",
+        "carne": "Res",
+        "salsa": "Barbacoa",
+        "queso": "Cheddar",
+        "lechuga": true,
+        "categoria": "Comida R�pida",
+        "precio": "9.99",
+        "picture": "../static/IMAGES/classic.jpg"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "14:30:00",
+    "fecha_pedido": "2023-01-15",
+    "precio_pedido": "29.970",
+    "usuario": 2
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 21,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "14",
+        "cantidad": "1"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "16:36:35.959",
+    "fecha_pedido": "2023-12-06",
+    "precio_pedido": "14.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 22,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      },
+      {
+        "nombre": "S-30",
+        "precio": "38.7",
+        "cantidad": "3"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "16:39:09",
+    "fecha_pedido": "2023-12-06",
+    "precio_pedido": "66.700",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 23,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "14",
+        "cantidad": "1"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:37:10.978",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "14.000",
+    "usuario": 6
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 24,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:39:07.266",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 25,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:39:24.277",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 26,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:39:44.162",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 27,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:39:55.674",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 28,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:40:11.392",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 29,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:40:24.224",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 30,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:40:31.743",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 31,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:40:59.854",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 32,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:41:08.368",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 33,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:41:16.380",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 34,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:41:36.952",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 35,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:41:43.619",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 36,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:42:05.364",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 37,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:42:15.382",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 38,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:42:33.766",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 39,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:43:05.189",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 40,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "15:43:21.928",
+    "fecha_pedido": "2023-12-07",
+    "precio_pedido": "28.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 41,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "King Size BBQ FatBoyKiller",
+        "precio": "28",
+        "cantidad": "2"
+      },
+      {
+        "nombre": "Home Burger",
+        "precio": "27",
+        "cantidad": "2"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "11:10:27.857",
+    "fecha_pedido": "2023-12-09",
+    "precio_pedido": "55.000",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 42,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "S-30",
+        "precio": "12.9",
+        "cantidad": "1"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "11:11:58.023",
+    "fecha_pedido": "2023-12-09",
+    "precio_pedido": "12.900",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 43,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "S-30",
+        "precio": "12.9",
+        "cantidad": "1"
+      }
+    ],
+    "establecimiento": 1,
+    "hora_pedido": "11:13:06.011",
+    "fecha_pedido": "2023-12-09",
+    "precio_pedido": "12.900",
+    "usuario": 5
+  }
+},
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 44,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "Vegan Deluxe",
+        "precio": "13.9",
+        "cantidad": "1"
+      },
+      {
+        "nombre": "Smash Burger",
+        "precio": "14.2",
+        "cantidad": "1"
+      }
+    ],
+    "establecimiento": 2,
+    "hora_pedido": "12:27:14.160",
+    "fecha_pedido": "2023-12-09",
+    "precio_pedido": "28.100",
+    "usuario": 5
+  }
+},
+
+{
+  "model": "sanburgerapp.pedido",
+  "pk": 45,
+  "fields": {
+    "producto": [
+      {
+        "nombre": "Vegan Deluxe",
+        "precio": "13.9",
+        "cantidad": "1"
+      },
+      {
+        "nombre": "Smash Burger",
+        "precio": "14.2",
+        "cantidad": "1"
+      }
+    ],
+    "establecimiento": 2,
+    "hora_pedido": "12:27:14.160",
+    "fecha_pedido": "2023-12-09",
+    "precio_pedido": "28.100",
+    "usuario": 5
+  }
+}
+]

@@ -1,0 +1,211 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATEGORIAS PRODUCTO</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/type_products.css' %}">
+</head>
+<body>
+    <header>
+            <nav role="navigation">
+              <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                  <a href="#" id="inicio"><li>INICIO</li></a>
+                  <a href="{% url 'datos_usuario' %}" id="perfil"><li>PERFIL</li></a>
+                  <a href="#" id="logout"><li>LOGOUT</li></a>
+                </ul>
+              </div>
+            </nav>
+            <div id="cart" onclick="toggleUp()"></div>
+                <div id="popup">
+                    <div id="close">
+                        <a href="#" id="close-click" onclick="closeToggle()">X</a>
+                    </div>
+                    <div class="row checkout" id="prueba">  
+                        <h4 id="cart-title">TU CARRITO</h4>
+                    </div>
+                        <!-- <h2 v-if="empty">CARRITO VACIO</h2 -->>
+                        <div id="list-container">
+                                   <!--  <div v-for="item in shoppingList" class="producto">
+                                        <h4 class="nombre">{{ item.name }}</h4>
+                                        <div class="pic">
+                                            <img v-bind:src="{item.url_imagen}" alt="SANBURGER" ref="imagen">
+                                        </div>
+                                        <div class="burger">
+                                            <h4 class="nombre">{{item.name}}</h4>
+                                        </div>
+                                    </div> -->
+                        </div>   
+                    <div class="row checkout">   
+                        <span class="checkout-button" id="pago">PAGAR</span>  
+                        <span class="checkout-button-right" id="vacio-button">LIMPIAR CARRITO</span>
+                    </div>  
+                </div>
+    </header>
+
+    <main>
+        <div class="logo">    <img src="{% static 'IMAGES/san_logo.png' %}" alt="SANBURGER">
+        </div>
+        <br>
+        <br>
+        <div class="titulo">
+            <h2>
+                CATEGORIAS HAMBURGESAS DE {{establecimiento}}
+            </h2>
+        </div>
+        <div class="container-up">
+            <div class="category">
+                <a href="{% url 'burger' categoria establecimiento categorias_producto.0.nombre  %}">{{categorias_producto.0.nombre}}</a>
+            </div>
+            <div class="category-left">
+                <a href="{% url 'burger' categoria establecimiento categorias_producto.1.nombre  %}">{{categorias_producto.1.nombre}}</a>
+            </div>
+        </div>
+        <div class="container-down">
+            <div class="category">
+                <a href="{% url 'burger' categoria establecimiento categorias_producto.2.nombre  %}">{{categorias_producto.2.nombre}}</a>
+            </div>
+            <div class="category-left">
+                <a href="{% url 'burger' categoria establecimiento categorias_producto.3.nombre  %}">{{categorias_producto.3.nombre}}</a>
+            </div>
+        </div>
+    </main>
+    <div class="footer">&copy;<span id="year"> </span><span> Deusto.Todos los derechos reservados.</span></div>
+
+
+</body>
+<script type="text/javascript">
+    window.addEventListener( "pageshow", function ( event ) {
+    var historyTraversal = event.persisted || ( typeof window.performance != "undefined" && window.performance.navigation.type === 2 );
+    if ( historyTraversal ) {
+        window.location.reload();
+    }
+});
+    
+</script>
+<script type="text/javascript">
+        var csrftoken='{{ csrf_token }}'
+       /* const button=document.getElementById("add-to-car");*/
+        let array=[];
+        let name_controler=[];
+        const container=document.getElementById('list-container');
+        const cart=document.getElementById('cart');
+/*        const url_form=document.getElementById("imagen").src.split('127.0.0.1:8000')[1];
+*/      const vaciar_button=document.getElementById('vacio-button');
+        const pagar_button=document.getElementById('pago');
+        let item={};
+        var limit=0;
+        {{carrito|safe}}.forEach(valores=>{
+            let leki=valores.split(":");
+            if(name_controler.includes(leki[0])){
+
+            }else{
+                item={name:leki[0],cantidad:leki[2],importe:leki[1],url:leki[3]}
+                array.push(item)
+                name_controler.push(leki[0]);
+            }
+        });
+
+        function toggleUp(){
+            if(array.length==0){
+                let html_content='';
+                let html_vacio='<h2 id="vacio">CARRITO VACIO</h2>';
+                container.innerHTML=html_vacio;
+            }else{
+                {{carrito|safe}}.forEach(valores=>{
+                    let leki=valores.split(":");
+                    if(name_controler.includes(leki[0])){
+
+                    }else{
+                        item={name:leki[0],cantidad:leki[2],importe:leki[1],url:leki[3]}
+                        array.push(item)
+                        name_controler.push(leki[0]);
+                    }
+            });
+            let html_content='';
+            for (const item of array){
+                html_content+='<div class="producto" id="'+item.name+'"><div class="pic"><img src="'+item.url+'" alt="SANBURGER" ref="imagen"></div><div class="burger"><h6 class="nombre">'+item.name+'('+item.cantidad+'UDS)</h6><h4 class="precio">'+item.importe+'$</h4></div></div>';
+                container.innerHTML=html_content;
+            };
+        }
+            var popup = document.getElementById('popup');
+            popup.style.display ='block';
+        };
+  
+        pagar_button.addEventListener('click',function(event){
+            if(array.length==0){
+                alert("No puede pagar un carrito vacio")
+            }else{
+                var url ="{% url 'pago' establecimiento %}";            
+                window.location.href = url;
+            }
+        });
+        vaciar_button.addEventListener('click',function(event){
+            if(array.length==0){
+                alert("EL CARRITO YA ESTA VACIO");
+            }else{
+                let html_vacio='<h2 id="vacio">CARRITO VACIO</h2>';
+                container.innerHTML=html_vacio;
+                array=[];
+                name_controler=[];
+                const request= new XMLHttpRequest();
+                    request.onreadystatechange=function(){
+                        if(this.readyState==4 && this.status==200){
+                           
+                        }
+                    }
+                request.open("POST",'/sanburgerapp/limpiar_carro')
+                request.setRequestHeader("X-CSRFToken",csrftoken)
+                request.send()
+                
+            }
+        });
+
+    </script>
+    <script type="text/javascript">
+       function closeToggle(){
+            var popup = document.getElementById('popup');
+            popup.style.display ='none';            
+       };
+    </script>
+    <script type="text/javascript">
+        var salir = document.getElementById('logout');
+        salir.addEventListener('click', function(event) {
+            var confirmacion = confirm('¿Estas seguro que desas salir de SANBURGER?');
+            if (confirmacion) {
+                var url ="{% url 'logout'%}";            
+                window.location.href = url;
+            } 
+            else {
+                alert('Operación cancelada');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var salir = document.getElementById('logout');
+        salir.addEventListener('click', function(event) {
+            var confirmacion = confirm('¿Estas seguro que desas salir de SANBURGER?');
+            if (confirmacion) {
+                var url ="{% url 'logout'%}";            
+                window.location.href = url;
+            } 
+            else {
+                alert('Operación cancelada');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var inicio = document.getElementById('inicio');
+        inicio.addEventListener('click', function(event) {
+            var url ="{% url 'calidad'%}";            
+            window.location.href = url;
+        });
+    </script>
+
+</html>

@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Iniciar Sesión</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'CSS/login_user.css'%}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    </head>
+    <body>
+        <header>
+            <nav role="navigation">
+              <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                    <a href="{% url 'home' %}" ><li>HOME</li></a>
+                    <a href="{% url 'login' %}"><li>INICIAR SESION</li></a>
+                    <a href="{% url 'registro' %}"><li>REGISTRARME</li></a>
+                    <a href="{% url 'info' %}"><li>INFORMACION SANBURGER</li></a>
+                    <a href="{% url 'contacto' %}"><li>CONTACTANOS</li></a>
+                    <a href="{% url 'chat' %}"><li>INICIA UN CHAT</li></a>
+                </ul>
+              </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="logo">    <img src="../static/IMAGES/san_logo.png" alt="SANBURGER"></div>
+            <br>
+            <br>
+            <div class="login">
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <label for="username">NOMBRE DE USUARIO: </label>
+                    <input type="text" name="username" placeholder="Username" required="required" />
+                    <label for="password">CONTRASEÑA: </label>
+                    <input type="password" name="password" placeholder="Password" required="required" />
+                    <button type="submit" class="btn btn-primary btn-block btn-large">Acceder</button>
+                </form>
+            </div>
+        </main>
+        <div class="footer">&copy;<span id="year"> </span><span> Deusto.Todos los derechos reservados.</span></div>
+
+    </body>
+</html>

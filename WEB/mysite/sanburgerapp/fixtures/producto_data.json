@@ -1,0 +1,642 @@
+[
+{
+  "model": "sanburgerapp.producto",
+  "pk": 1,
+  "fields": {
+    "establecimiento": 1,
+    "nombre_producto": "Hamburguesa Clásica",
+    "pan": "Brioche",
+    "carne": "Res",
+    "salsa": "Barbacoa",
+    "queso": "Cheddar",
+    "lechuga": true,
+    "categoria": 1,
+    "precio": "9.990",
+    "picture": "../static/IMAGES/classic.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 2,
+  "fields": {
+    "establecimiento": 1,
+    "nombre_producto": "Home Burger",
+    "pan": "Cristal",
+    "carne": "Angus",
+    "salsa": "Bacon",
+    "queso": "Cheddar",
+    "lechuga": false,
+    "categoria": 2,
+    "precio": "13.500",
+    "picture": "static/IMAGES/products/km_1_cVrgjMT.png"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 3,
+  "fields": {
+    "establecimiento": 1,
+    "nombre_producto": "S-30",
+    "pan": "Sésamo",
+    "carne": "Kobe",
+    "salsa": "Bacon",
+    "queso": "Gouda",
+    "lechuga": false,
+    "categoria": 3,
+    "precio": "12.900",
+    "picture": "static/IMAGES/products/smash_1_SaMmQID.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 4,
+  "fields": {
+    "establecimiento": 1,
+    "nombre_producto": "Pigma",
+    "pan": "Mollete",
+    "carne": "Pollo",
+    "salsa": "Mayonesa",
+    "queso": "Mozzarella",
+    "lechuga": true,
+    "categoria": 4,
+    "precio": "12.900",
+    "picture": "static/IMAGES/products/pollo_1_2sS2EY6.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 5,
+  "fields": {
+    "establecimiento": 2,
+    "nombre_producto": "Vegan Deluxe",
+    "pan": "Sésamo",
+    "carne": "Vegana",
+    "salsa": "Ketchup",
+    "queso": "Violife",
+    "lechuga": true,
+    "categoria": 1,
+    "precio": "13.900",
+    "picture": "static/IMAGES/products/vegana_2_6ftS6ug.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 6,
+  "fields": {
+    "establecimiento": 2,
+    "nombre_producto": "Bart Burger",
+    "pan": "Sésamo",
+    "carne": "Vacuno",
+    "salsa": "Mostaza",
+    "queso": "Mozzarella",
+    "lechuga": false,
+    "categoria": 2,
+    "precio": "12.500",
+    "picture": "static/IMAGES/products/km_2_StkOXJD.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 7,
+  "fields": {
+    "establecimiento": 2,
+    "nombre_producto": "Smash Burger",
+    "pan": "Sésamo",
+    "carne": "Vacuno",
+    "salsa": "Mayonesa",
+    "queso": "Gouda",
+    "lechuga": false,
+    "categoria": 3,
+    "precio": "14.200",
+    "picture": "static/IMAGES/products/smash_2_b9yIUPq.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 8,
+  "fields": {
+    "establecimiento": 2,
+    "nombre_producto": "La Musa",
+    "pan": "Mollete",
+    "carne": "Pollo",
+    "salsa": "Mostaza",
+    "queso": "Cheddar",
+    "lechuga": true,
+    "categoria": 4,
+    "precio": "13.500",
+    "picture": "static/IMAGES/products/pollo_2_5ccxcDJ.png"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 9,
+  "fields": {
+    "establecimiento": 3,
+    "nombre_producto": "Vegan Deluxe",
+    "pan": "Cristal",
+    "carne": "Vegana",
+    "salsa": "Mayonesa",
+    "queso": "Violife",
+    "lechuga": true,
+    "categoria": 1,
+    "precio": "13.600",
+    "picture": "static/IMAGES/products/vegana_3_F0bCBiI.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 10,
+  "fields": {
+    "establecimiento": 2,
+    "nombre_producto": "Lisa Burger",
+    "pan": "Sésamo",
+    "carne": "Kobe",
+    "salsa": "Bacon",
+    "queso": "Gouda",
+    "lechuga": false,
+    "categoria": 2,
+    "precio": "13.500",
+    "picture": "static/IMAGES/products/km_3_c5kt5fG.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 11,
+  "fields": {
+    "establecimiento": 3,
+    "nombre_producto": "Kevin Serrana",
+    "pan": "Cristal",
+    "carne": "Angus",
+    "salsa": "Mostaza",
+    "queso": "Mozzarella",
+    "lechuga": false,
+    "categoria": 3,
+    "precio": "15.000",
+    "picture": "static/IMAGES/products/smash_3_cMeZJmm.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 12,
+  "fields": {
+    "establecimiento": 3,
+    "nombre_producto": "Grill Burger",
+    "pan": "Sésamo",
+    "carne": "Pollo",
+    "salsa": "Barbacoa",
+    "queso": "Mozzarella",
+    "lechuga": true,
+    "categoria": 4,
+    "precio": "14.500",
+    "picture": "static/IMAGES/products/pollo_3_iFYsGRy.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 13,
+  "fields": {
+    "establecimiento": 4,
+    "nombre_producto": "Green Burger",
+    "pan": "Sésamo",
+    "carne": "Vegana",
+    "salsa": "Mayonesa",
+    "queso": "Grattaveg",
+    "lechuga": true,
+    "categoria": 1,
+    "precio": "13.900",
+    "picture": "static/IMAGES/products/vegana_4_ntU62c9.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 14,
+  "fields": {
+    "establecimiento": 4,
+    "nombre_producto": "Txingon Burger",
+    "pan": "Mollete",
+    "carne": "Vacuno",
+    "salsa": "Mayonesa",
+    "queso": "Gouda",
+    "lechuga": false,
+    "categoria": 2,
+    "precio": "12.500",
+    "picture": "static/IMAGES/products/km_4_WKnrWTT.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 15,
+  "fields": {
+    "establecimiento": 4,
+    "nombre_producto": "Maggie Burger",
+    "pan": "Sésamo",
+    "carne": "Vacuno",
+    "salsa": "Mostaza",
+    "queso": "Mozzarella",
+    "lechuga": false,
+    "categoria": 3,
+    "precio": "12.500",
+    "picture": "static/IMAGES/products/smash_4_NSQHfky.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 16,
+  "fields": {
+    "establecimiento": 4,
+    "nombre_producto": "Chicken Mayo",
+    "pan": "Cristal",
+    "carne": "Pollo",
+    "salsa": "Mostaza",
+    "queso": "Cheddar",
+    "lechuga": false,
+    "categoria": 4,
+    "precio": "12.800",
+    "picture": "static/IMAGES/products/pollo_4_xioef2W.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 17,
+  "fields": {
+    "establecimiento": 5,
+    "nombre_producto": "Mega Vegan",
+    "pan": "Mollete",
+    "carne": "Vegana",
+    "salsa": "Barbacoa",
+    "queso": "Grattaveg",
+    "lechuga": true,
+    "categoria": 1,
+    "precio": "12.900",
+    "picture": "static/IMAGES/products/vegana_5_YeutxhM.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 18,
+  "fields": {
+    "establecimiento": 5,
+    "nombre_producto": "Classic Burger",
+    "pan": "Mollete",
+    "carne": "Angus",
+    "salsa": "Bacon",
+    "queso": "Cheddar",
+    "lechuga": false,
+    "categoria": 2,
+    "precio": "12.600",
+    "picture": "static/IMAGES/products/km_5_FY3GhKC.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 19,
+  "fields": {
+    "establecimiento": 5,
+    "nombre_producto": "Cheese Burger",
+    "pan": "Sésamo",
+    "carne": "Kobe",
+    "salsa": "Bacon",
+    "queso": "Mozzarella",
+    "lechuga": false,
+    "categoria": 3,
+    "precio": "11.600",
+    "picture": "static/IMAGES/products/smash_5_y61voIG.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 20,
+  "fields": {
+    "establecimiento": 5,
+    "nombre_producto": "Double Cheese Burger",
+    "pan": "Mollete",
+    "carne": "Pollo",
+    "salsa": "Mostaza",
+    "queso": "Cheddar",
+    "lechuga": false,
+    "categoria": 4,
+    "precio": "14.000",
+    "picture": "static/IMAGES/products/pollo_10_Oiu4V3l.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 21,
+  "fields": {
+    "establecimiento": 6,
+    "nombre_producto": "Vegan Guacamole",
+    "pan": "Sésamo",
+    "carne": "Vegana",
+    "salsa": "Mayonesa",
+    "queso": "Grattaveg",
+    "lechuga": true,
+    "categoria": 1,
+    "precio": "12.500",
+    "picture": "static/IMAGES/products/vegana_1_3hfqQsn.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 22,
+  "fields": {
+    "establecimiento": 5,
+    "nombre_producto": "George Burger",
+    "pan": "Sésamo",
+    "carne": "Kobe",
+    "salsa": "Barbacoa",
+    "queso": "Mozzarella",
+    "lechuga": true,
+    "categoria": 2,
+    "precio": "13.500",
+    "picture": "static/IMAGES/products/km_6_mfeFFDI.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 23,
+  "fields": {
+    "establecimiento": 6,
+    "nombre_producto": "New York City",
+    "pan": "Cristal",
+    "carne": "Kobe",
+    "salsa": "Mayonesa",
+    "queso": "Gouda",
+    "lechuga": true,
+    "categoria": 3,
+    "precio": "14.000",
+    "picture": "static/IMAGES/products/smash_6_N9sjbSN.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 24,
+  "fields": {
+    "establecimiento": 6,
+    "nombre_producto": "La Kiki",
+    "pan": "Mollete",
+    "carne": "Pollo",
+    "salsa": "Bacon",
+    "queso": "Gouda",
+    "lechuga": true,
+    "categoria": 4,
+    "precio": "12.900",
+    "picture": "static/IMAGES/products/pollo_6_zCjCucs.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 25,
+  "fields": {
+    "establecimiento": 7,
+    "nombre_producto": "Plant Burger",
+    "pan": "Mollete",
+    "carne": "Vegana",
+    "salsa": "Barbacoa",
+    "queso": "Violife",
+    "lechuga": true,
+    "categoria": 1,
+    "precio": "13.900",
+    "picture": "static/IMAGES/products/vegana_7_1L5SKJs.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 26,
+  "fields": {
+    "establecimiento": 7,
+    "nombre_producto": "Kevin Burger",
+    "pan": "Sésamo",
+    "carne": "Kobe",
+    "salsa": "Mostaza",
+    "queso": "Gouda",
+    "lechuga": true,
+    "categoria": 2,
+    "precio": "12.500",
+    "picture": "static/IMAGES/products/km_7_WtkzfsS.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 27,
+  "fields": {
+    "establecimiento": 7,
+    "nombre_producto": "Yankee",
+    "pan": "Mollete",
+    "carne": "Vacuno",
+    "salsa": "Mayonesa",
+    "queso": "Gouda",
+    "lechuga": false,
+    "categoria": 3,
+    "precio": "11.900",
+    "picture": "static/IMAGES/products/smash_7_JKYrlHi.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 28,
+  "fields": {
+    "establecimiento": 7,
+    "nombre_producto": "American Burger",
+    "pan": "Sésamo",
+    "carne": "Pollo",
+    "salsa": "Mayonesa",
+    "queso": "Mozzarella",
+    "lechuga": true,
+    "categoria": 4,
+    "precio": "13.500",
+    "picture": "static/IMAGES/products/pollo_7_1SC0dOZ.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 29,
+  "fields": {
+    "establecimiento": 8,
+    "nombre_producto": "Veggie Burger",
+    "pan": "Mollete",
+    "carne": "Vegana",
+    "salsa": "Mostaza",
+    "queso": "Violife",
+    "lechuga": true,
+    "categoria": 1,
+    "precio": "12.500",
+    "picture": "static/IMAGES/products/vegana_8_cCWnKs0.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 30,
+  "fields": {
+    "establecimiento": 8,
+    "nombre_producto": "Handels Burger",
+    "pan": "Mollete",
+    "carne": "Vacuno",
+    "salsa": "Ketchup",
+    "queso": "Cheddar",
+    "lechuga": false,
+    "categoria": 2,
+    "precio": "12.500",
+    "picture": "static/IMAGES/products/km_8_gkKZ1WL.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 31,
+  "fields": {
+    "establecimiento": 8,
+    "nombre_producto": "Basque Burger",
+    "pan": "Sésamo",
+    "carne": "Kobe",
+    "salsa": "Mayonesa",
+    "queso": "Mozzarella",
+    "lechuga": false,
+    "categoria": 3,
+    "precio": "11.500",
+    "picture": "static/IMAGES/products/smash_8_NVSbXEF.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 32,
+  "fields": {
+    "establecimiento": 8,
+    "nombre_producto": "Mega Classic Burger",
+    "pan": "Sésamo",
+    "carne": "Pollo",
+    "salsa": "Mostaza",
+    "queso": "Gouda",
+    "lechuga": true,
+    "categoria": 4,
+    "precio": "10.900",
+    "picture": "static/IMAGES/products/pollo_8_QMSVR4g.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 33,
+  "fields": {
+    "establecimiento": 9,
+    "nombre_producto": "Veggie ClubHouse",
+    "pan": "Mollete",
+    "carne": "Vegana",
+    "salsa": "Barbacoa",
+    "queso": "Violife",
+    "lechuga": true,
+    "categoria": 1,
+    "precio": "8.500",
+    "picture": "static/IMAGES/products/vegana_9_C1NoKMM.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 34,
+  "fields": {
+    "establecimiento": 9,
+    "nombre_producto": "Derau Burger",
+    "pan": "Mollete",
+    "carne": "Vacuno",
+    "salsa": "Mostaza",
+    "queso": "Cheddar",
+    "lechuga": true,
+    "categoria": 2,
+    "precio": "9.000",
+    "picture": "static/IMAGES/products/km_9_XeHwyXP.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 35,
+  "fields": {
+    "establecimiento": 9,
+    "nombre_producto": "S-Burger",
+    "pan": "Sésamo",
+    "carne": "Kobe",
+    "salsa": "Mostaza",
+    "queso": "Mozzarella",
+    "lechuga": true,
+    "categoria": 3,
+    "precio": "9.500",
+    "picture": "static/IMAGES/products/smash_9_x5VfcHq.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 36,
+  "fields": {
+    "establecimiento": 9,
+    "nombre_producto": "Gonsales Burger",
+    "pan": "Mollete",
+    "carne": "Pollo",
+    "salsa": "Barbacoa",
+    "queso": "Cheddar",
+    "lechuga": false,
+    "categoria": 4,
+    "precio": "8.700",
+    "picture": "static/IMAGES/products/pollo_9_OOZ8I7o.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 37,
+  "fields": {
+    "establecimiento": 10,
+    "nombre_producto": "Mexican Burger",
+    "pan": "Mollete",
+    "carne": "Vegana",
+    "salsa": "Mostaza",
+    "queso": "Grattaveg",
+    "lechuga": true,
+    "categoria": 1,
+    "precio": "8.900",
+    "picture": "static/IMAGES/products/vegana_10_VA3Tmen.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 38,
+  "fields": {
+    "establecimiento": 10,
+    "nombre_producto": "Brazilian Burger",
+    "pan": "Mollete",
+    "carne": "Angus",
+    "salsa": "Barbacoa",
+    "queso": "Mozzarella",
+    "lechuga": true,
+    "categoria": 2,
+    "precio": "9.000",
+    "picture": "static/IMAGES/products/km_10_qXMbnPy.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 39,
+  "fields": {
+    "establecimiento": 10,
+    "nombre_producto": "Mission Burger",
+    "pan": "Sésamo",
+    "carne": "Kobe",
+    "salsa": "Mayonesa",
+    "queso": "Gouda",
+    "lechuga": false,
+    "categoria": 3,
+    "precio": "8.200",
+    "picture": "static/IMAGES/products/smash_10_0JTBjYV.jpg"
+  }
+},
+{
+  "model": "sanburgerapp.producto",
+  "pk": 40,
+  "fields": {
+    "establecimiento": 10,
+    "nombre_producto": "Agote Burger",
+    "pan": "Cristal",
+    "carne": "Pollo",
+    "salsa": "Barbacoa",
+    "queso": "Gouda",
+    "lechuga": false,
+    "categoria": 4,
+    "precio": "7.900",
+    "picture": "static/IMAGES/products/pollo_10_BFuJqYs.jpg"
+  }
+}
+]

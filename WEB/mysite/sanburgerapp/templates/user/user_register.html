@@ -1,0 +1,107 @@
+<!-- templates/tu_app/tu_template.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-20">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Tarjeta</title>
+    <link rel="stylesheet" type="text/css" href="../static/CSS/user_register.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+<body>
+
+        <header>
+            <nav role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                    <a href="{% url 'home' %}" ><li>HOME</li></a>
+                    <a href="{% url 'login' %}"><li>INICIAR SESION</li></a>
+                    <a href="{% url 'registro' %}"><li>REGISTRARME</li></a>
+                    <a href=""><li>INFORMACION SANBURGER</li></a>
+                    <a href="{% url 'contacto' %}"><li>CONTACTANOS</li></a>
+                    <a href="{% url 'chat' %}"><li>INICIA UN CHAT</li></a>
+                </ul>
+            </div>
+            </nav>
+        </header>
+    <main>
+        <div class="logo">    <img src="../static/IMAGES/san_logo.png" alt="SANBURGER"></div>
+        <br>
+        <div class="wrapper">
+            <h2>REGISTRO SANBURGER:{{error}} </h2>
+            <div id="app">
+                    <p v-if={{error}} id="vue-alert">{{texto_error}}</p>
+            </div>
+            <form method="post" action="{% url 'registro' %}">
+                {% csrf_token %}
+                <!-- Campos del formulario -->
+                <div class="form-container">
+                    <div class="up-wrap">
+                    <div class="input-box">
+                        <input type="text" name="username"placeholder="Introduce tu nombre de usuario" required maxlength="20"><br>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" name="password" placeholder="Introduce tu contraseña: " required maxlength="20"><br>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="email" placeholder="Introduce tu correo electronico: " required maxlength="30"><br>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="first_name" placeholder="Introduce tu nombre:" required maxlength="20"><br>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="last_name" placeholder="Introduce tu apellido: " required maxlength="20"><br>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="dni" placeholder="Introduce tu DNI:" required maxlength="20"><br>
+                    </div>
+                    <div class="input-box">
+                        <input type="number" name="edad" placeholder="Introduce tu edad " required><br>
+                    </div>
+                    <div class="input-box">
+                        <input type="number" name="telefono" placeholder="Introduce tu numero de telefono: " required><br>
+                    </div>
+                </div>
+                <div class="down-wrapper">
+                    <div class="input-box">
+                        <input type="text" name="domicilio" placeholder="Introduce tu domicilio: " required maxlength="50"><br>
+                    </div>
+                    <div class="input-box">
+                        <input type="number" name="numero_tarjeta" placeholder="Introduce tu numero de tarjeta" required><br>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="titular_tarjeta" placeholder="Introduce el titular de la tarjeta: " required maxlength="30"><br>
+                    </div>
+                    <div class="input-box">
+                        <input type="date" name="caducidad_tarjeta" required><br>
+                    </div>
+                    <div class="input-box">
+                        <input type="number" placeholder="Introduzca el CVV de tarjeta:" name="cvv_tarjeta" required><br>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" placeholder="Introduzca la contraseña de su tarjeta: " name="password_tarjeta" required maxlength="20"><br>
+                    </div>
+                </div>
+                    
+                </div>
+                <!-- Botón de envío -->
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary btn-block btn-large">REGISTRARME</button>
+            </form>
+        </div>
+    </main>
+    <div class="footer">&copy;<span id="year"> </span><span> Deusto.Todos los derechos reservados.</span></div>
+
+
+</body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js">
+        
+    </script>
+</html>

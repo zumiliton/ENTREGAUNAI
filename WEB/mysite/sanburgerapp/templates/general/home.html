@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAMBURGUESAS</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/home.css' %}">
+</head>
+<body>
+    <header>
+            <nav role="navigation">
+              <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                  <a href="" id="inicio"><li>HOME</li></a>
+                  <a href="{% url 'login' %}" id= "login"><li>INICIAR SESION</li></a>
+                  <a href="{% url 'registro' %}" id="registro"><li>REGISTRARME</li></a>
+                  <a href="{% url 'info' %}" id=""><li>INFORMACION SANBURGER</li></a>
+                  <a href="{% url 'contacto' %}" id="contacto"><li>CONTACTANOS</li></a>
+                  <a href="{% url 'chat' %}"><li>INICIA UN CHAT</li></a>
+                </ul>
+              </div>
+            </nav>
+    </header>
+
+    <main>
+        <br>
+        <p id = "lema"> EL CIELO ENTRE DOS PANES, EL INFIERNO EN SALSA</p>
+        <br>
+        
+            
+        
+    </main>
+   <div class="footer">&copy;<span id="year"> </span><span> Deusto.Todos los derechos reservados.</span></div>
+
+    </body>
+    <script type="text/javascript">
+        var salir = document.getElementById('logout');
+        salir.addEventListener('click', function(event) {
+            var confirmacion = confirm('¿Estas seguro que desas salir de SANBURGER?');
+            if (confirmacion) {
+                var url ="{% url 'logout'%}";            
+                window.location.href = url;
+            } 
+            else {
+                alert('Operación cancelada');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var inicio = document.getElementById('inicio');
+        inicio.addEventListener('click', function(event) {
+            var url ="{% url 'calidad'%}";            
+            window.location.href = url;
+        });
+    </script>
+
+    <script>
+        var tiempoDeEspera = 5000; // 5 segundos
+        var imagenActual = 1;
+      
+        function cambiarFondo() {
+          imagenActual++;
+          if (imagenActual > 3) {
+            imagenActual = 1;
+          }
+          document.body.classList.remove('background-1', 'background-2', 'background-3');
+          document.body.classList.add('background-' + imagenActual);
+        }
+      
+        setInterval(cambiarFondo, tiempoDeEspera);
+      </script>
+      <script type="text/javascript">
+        let year = document.querySelector("#year");
+        $(document).ready(function () {
+            year.innerText = new Date().getFullYear();
+        });
+      </script>
+</html>

@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CHECK OUT</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/congrats.css' %}">
+</head>
+<body>
+	 <header>
+            <nav role="navigation">
+              <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                  <a href="#"><li>INICIO</li></a>
+                  <a href="{% url 'datos_usuario'%}"><li>PERFIL</li></a>
+                  <a href="#" id="logout"><li>LOGOUT</li></a>
+                </ul>
+              </div>
+            </nav>
+             
+    </header>
+    <main>
+        <div class="logo">    <img src="{% static 'IMAGES/san_logo.png' %}" alt="SANBURGER">
+        </div>
+        <br>
+        <br>
+        <h2 class="title-fat">GRACIAS POR PEDIR EN SANBURGER MAKINA</h2>
+        <div class="card">
+            <div class="congrat">
+            </div>
+            
+        </div> 
+    </main>
+    <div class="fooler"></div>
+    <div class="footer">&copy;<span id="year"> </span><span> Deusto.Todos los derechos reservados.</span></div>
+</body>
+    <script type="text/javascript">
+        var inicio = document.getElementById('inicio');
+        inicio.addEventListener('click', function(event) {
+            var url ="{% url 'calidad'%}";            
+            window.location.href = url;
+           
+        });
+    </script>
+    <script type="text/javascript">
+        var salir = document.getElementById('logout');
+        salir.addEventListener('click', function(event) {
+            var confirmacion = confirm('¿Estas seguro que desas salir de SANBURGER?');
+            if (confirmacion) {
+                var url ="{% url 'logout'%}";            
+                window.location.href = url;
+            } 
+            else {
+                alert('Operación cancelada');
+            }
+        });
+    </script>
+   
+</html>

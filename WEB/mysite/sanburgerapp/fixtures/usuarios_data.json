@@ -1,0 +1,104 @@
+[
+{
+  "model": "sanburgerapp.usuarios",
+  "pk": 2,
+  "fields": {
+    "user": 5,
+    "dni": "3333333",
+    "edad": 5,
+    "telefono": 323232,
+    "correo": "sin correo",
+    "domicilio": "Etxadi",
+    "numero_tarjeta": 4,
+    "titular_tarjeta": "carles",
+    "caducidad_tarjeta": "2023-11-12",
+    "cvv_tarjeta": 0,
+    "password_tarjeta": "2323"
+  }
+},
+{
+  "model": "sanburgerapp.usuarios",
+  "pk": 4,
+  "fields": {
+    "user": 7,
+    "dni": "88888888",
+    "edad": 4,
+    "telefono": 234342,
+    "correo": "sin correo",
+    "domicilio": "Igeldo",
+    "numero_tarjeta": 5,
+    "titular_tarjeta": "PapaRecondo",
+    "caducidad_tarjeta": "2023-11-29",
+    "cvv_tarjeta": 444,
+    "password_tarjeta": "tete"
+  }
+},
+{
+  "model": "sanburgerapp.usuarios",
+  "pk": 5,
+  "fields": {
+    "user": 4,
+    "dni": "73034240",
+    "edad": 24,
+    "telefono": 6666666666666,
+    "correo": "juju@gmail.com",
+    "domicilio": "Bera Bera 96",
+    "numero_tarjeta": 32434234,
+    "titular_tarjeta": "PEPE GARCIA OTERO",
+    "caducidad_tarjeta": "2023-12-17",
+    "cvv_tarjeta": 888,
+    "password_tarjeta": "papisuave"
+  }
+},
+{
+  "model": "sanburgerapp.usuarios",
+  "pk": 6,
+  "fields": {
+    "user": 8,
+    "dni": "23423423",
+    "edad": 23,
+    "telefono": 234324242,
+    "correo": "sin correo",
+    "domicilio": "Trintxerpe",
+    "numero_tarjeta": 233224,
+    "titular_tarjeta": "JUA FALESI KIKI",
+    "caducidad_tarjeta": "2023-11-30",
+    "cvv_tarjeta": 333,
+    "password_tarjeta": "yeye"
+  }
+},
+{
+  "model": "sanburgerapp.usuarios",
+  "pk": 7,
+  "fields": {
+    "user": 9,
+    "dni": "34342",
+    "edad": 34,
+    "telefono": 453453,
+    "correo": "sin correo",
+    "domicilio": "vcsdcsdc",
+    "numero_tarjeta": 42324,
+    "titular_tarjeta": "scsfdsfd",
+    "caducidad_tarjeta": "2023-12-12",
+    "cvv_tarjeta": 234,
+    "password_tarjeta": "53453"
+  }
+},
+{
+  "model": "sanburgerapp.usuarios",
+  "pk": 8,
+  "fields": {
+    "user": 6,
+    "dni": "72523428N",
+    "edad": 21,
+    "telefono": 453453,
+    "correo": "iker.gonrek@opendeusto.es",
+    "domicilio": "Avenida Barcelona 47",
+    "numero_tarjeta": 42324,
+    "titular_tarjeta": "Iker Gonzalez Pendejo",
+    "caducidad_tarjeta": "2023-12-12",
+    "cvv_tarjeta": 981,
+    "password_tarjeta": "53453"
+  }
+}
+]

@@ -1,0 +1,283 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAMBURGUESAS</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/inside_product.css' %}">
+</head>
+<body id="app">
+    <header>
+            <nav role="navigation">
+              <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                  <a href="#" id="inicio"><li>INICIO</li></a>
+                  <a href="{% url 'datos_usuario' %}" id="perfil"><li>PERFIL</li></a>
+                  <a href="#" id="logout"><li>LOGOUT</li></a>
+                </ul>
+              </div>
+            </nav>
+            <div id="cart" onclick="toggleUp()"></div>
+                <div id="popup">
+                    <div id="close">
+                        <a href="#" id="close-click" onclick="closeToggle()">X</a>
+                    </div>
+                    <div class="row checkout" id="prueba">  
+                        <h4 id="cart-title">TU CARRITO</h4>
+                    </div>
+                        <!-- <h2 v-if="empty">CARRITO VACIO</h2 -->>
+                        <div id="list-container">
+                                   <!--  <div v-for="item in shoppingList" class="producto">
+                                        <h4 class="nombre">{{ item.name }}</h4>
+                                        <div class="pic">
+                                            <img v-bind:src="{item.url_imagen}" alt="SANBURGER" ref="imagen">
+                                        </div>
+                                        <div class="burger">
+                                            <h4 class="nombre">{{item.name}}</h4>
+                                        </div>
+                                    </div> -->
+                        </div>   
+                    <div class="row checkout">   
+                        <span class="checkout-button" id="pago">PAGAR</span>  
+                        <span class="checkout-button-right" id="vacio-button">LIMPIAR CARRITO</span>
+                    </div>  
+                </div>  
+             
+    </header>
+
+    <main>
+        <div class="logo">    <img src="{% static 'IMAGES/san_logo.png' %}" alt="SANBURGER">
+        </div>
+        <br>
+        <br>
+        <div class="card">
+            <div class="photo">
+                 <h2 id="titulo-producto" ref="title">
+                    {{producto.0.nombre_producto}}
+                </h2>
+                <img ref="imagen" id="imagen" src={{producto.0.picture.url}}>
+            </div>
+            <div class="description">
+                <div class="product-info">
+                    <h2>DESCRIPCION DE PRODUCTO:</h2>
+                    <h3>PAN: {{producto.0.pan}}</h3>
+                    <h3>CARNE: {{producto.0.carne}}</h3>
+                    <h3>SALSA: {{producto.0.salsa}}</h3>
+                    <h3>QUESO: {{producto.0.queso}}</h3>
+                    <h3>LECHUGA: {{producto.0.lechuga}}</h3>  
+                    <div class="button-container">
+                        <h2 id="cantidad_title">CANTIDAD SELECCIONADA:</h2>
+                        <div class="semi-button">
+                            <h1 id="cantidad_seleccionada" ref="cantidad">0</h1>
+                            <button  id="mas" class="cantidad">+</button>
+                            <button id="menos" class="cantidad">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="price">
+                    <h2 >PRECIO:</h2>
+                    <h1 ref="precio"id="precio">{{producto.0.precio}}</h1>
+                    <a class="button-74" role="button" id="add-to-car">AÑADIR CARRITO</a>
+                </div>
+            </div>
+        </div> 
+    </main>
+    <div class="fooler"></div>
+    <div class="footer">&copy;<span id="year"> </span><span> Deusto.Todos los derechos reservados.</span></div>
+
+</body>
+    <script type="text/javascript">
+        var csrftoken='{{ csrf_token }}'
+        const button=document.getElementById("add-to-car");
+        let array=[];
+        let name_controler=[];
+        const container=document.getElementById('list-container');
+        const cart=document.getElementById('cart');
+        const url_form=document.getElementById("imagen").src.split('127.0.0.1:8000')[1];
+        const vaciar_button=document.getElementById('vacio-button');
+        const pagar_button=document.getElementById('pago');
+        let item={};
+        {{carrito|safe}}.forEach(valores=>{
+            let leki=valores.split(":");
+            if(name_controler.includes(leki[0])){
+
+            }else{
+                item={name:leki[0],cantidad:leki[2],importe:leki[1],url:leki[3]}
+                array.push(item)
+                name_controler.push(leki[0]);
+            }
+        });
+        let html_content='';
+            for (const item of array){
+                html_content+='<div class="producto" id="'+item.name+'"><div class="pic"><img src="'+item.url+'" alt="SANBURGER" ref="imagen"></div><div class="burger"><h6 class="nombre">'+item.name+'('+item.cantidad+'UDS)</h6><h4 class="precio">'+item.importe+'$</h4></div></div>';
+                container.innerHTML=html_content;
+                };
+        function toggleUp(){
+            if(array.length==0){
+                let html_content='';
+                let html_vacio='<h2 id="vacio">CARRITO VACIO</h2>';
+                container.innerHTML=html_vacio;
+            }
+            var popup = document.getElementById('popup');
+            popup.style.display ='block';
+
+
+        };
+  
+        pagar_button.addEventListener('click',function(event){
+            if(array.length==0){
+                alert("No puede pagar un carrito vacio")
+            }else{
+                var url ="{% url 'pago' establecimiento %}";            
+                window.location.href = url;
+            }
+        });
+        vaciar_button.addEventListener('click',function(event){
+            if(array.length==0){
+                alert("EL CARRITO YA ESTA VACIO");
+            }else{
+                let html_vacio='<h2 id="vacio">CARRITO VACIO</h2>';
+                container.innerHTML=html_vacio;
+                array=[];
+                name_controler=[];
+                const request= new XMLHttpRequest();
+                    request.onreadystatechange=function(){
+                        if(this.readyState==4 && this.status==200){
+                          
+                        }
+                    }
+                request.open("POST",'/sanburgerapp/limpiar_carro')
+                request.setRequestHeader("X-CSRFToken",csrftoken)
+                request.send()
+                
+            }
+        });
+
+        button.addEventListener('click', function(event) {
+            if(parseFloat(document.getElementById("cantidad_seleccionada").innerText)==0){
+                alert("SELECCIONE AL MENOS UNA UNIDAD")
+            }else{
+                if(name_controler.includes(document.getElementById("titulo-producto").innerText)){
+                    const cuantity=document.getElementById(document.getElementById("titulo-producto").innerText);
+                    /*let html_h2='';*/
+                    var index=0;
+                    for(const item of array){
+                        if(item.name==document.getElementById("titulo-producto").innerText){
+                            item.cantidad=parseFloat(item.cantidad)+parseFloat(document.getElementById("cantidad_seleccionada").innerText);
+                            item.importe=parseFloat(item.importe)+(parseFloat(document.getElementById("precio").innerText)*parseFloat(document.getElementById("cantidad_seleccionada").innerText));
+                            const request= new XMLHttpRequest();
+                            request.onreadystatechange=function(){
+                            if(this.readyState==4 && this.status==200){
+                               
+                        }
+                    }
+                            request.open("POST",'/sanburgerapp/obtener_datos')
+                            request.setRequestHeader("X-CSRFToken",csrftoken)
+                            let formdata=new FormData();
+                            var last_item=array[index];
+                            /*let index=0;
+                            for(const item of array){
+                                alert(item.name)
+                                formdata.append(index,item.name+":"+item.importe+":"+item.cantidad+":"+item.url)
+                                index=index+1
+                            }*/
+                            formdata.append(0,last_item.name+":"+last_item.importe+":"+last_item.cantidad+":"+last_item.url)
+                            request.send(formdata)
+                        }
+                        index=index+1;
+                    }
+                    let html_content='';
+                    for (const item of array){
+                        html_content+='<div class="producto" id="'+item.name+'"><div class="pic"><img src="'+item.url+'" alt="SANBURGER" ref="imagen"></div><div class="burger"><h6 class="nombre">'+item.name+'('+item.cantidad+'UDS)</h6><h4 class="precio">'+item.importe+'$</h4></div></div>';
+                        container.innerHTML=html_content;
+                    };
+                }else{
+                    name_controler.push(document.getElementById("titulo-producto").innerText);
+                    item={name:document.getElementById("titulo-producto").innerText,
+                            cantidad:document.getElementById("cantidad_seleccionada").innerText,
+                            url: url_form,
+                            importe:parseFloat(document.getElementById("cantidad_seleccionada").innerText)*parseFloat(document.getElementById("precio").innerText)};
+                    array.push(item);
+                    let html_content='';
+                    for (const item of array){
+                        html_content+='<div class="producto" id="'+item.name+'"><div class="pic"><img src="'+item.url+'" alt="SANBURGER" ref="imagen"></div><div class="burger"><h6 class="nombre">'+item.name+'('+item.cantidad+'UDS)</h6><h4 class="precio">'+item.importe+'$</h4></div></div>';
+                        container.innerHTML=html_content;
+                    };
+                    container.style.overflowY="auto";
+                    const request= new XMLHttpRequest();
+                    request.onreadystatechange=function(){
+                        if(this.readyState==4 && this.status==200){
+
+                        }
+                    }
+                    request.open("POST",'/sanburgerapp/obtener_datos')
+                    request.setRequestHeader("X-CSRFToken",csrftoken)
+                    let formdata=new FormData();
+                    let ultima_pos=array.length;
+                    var last_item=array[ultima_pos-1];
+                    /*let index=0;
+                    for(const item of array){
+                        alert(item.name)
+                        formdata.append(index,item.name+":"+item.importe+":"+item.cantidad+":"+item.url)
+                        index=index+1
+                    }*/
+                    formdata.append(0,last_item.name+":"+last_item.importe+":"+last_item.cantidad+":"+last_item.url)
+                    request.send(formdata)
+                }
+                alert(document.getElementById("titulo-producto").innerText+" añadido al carrito")
+                
+            }
+        });
+
+    </script>
+    <script type="text/javascript">
+       function closeToggle(){
+            var popup = document.getElementById('popup');
+            popup.style.display ='none';            
+       };
+    </script>
+    <script type="text/javascript">
+        var salir = document.getElementById('logout');
+        salir.addEventListener('click', function(event) {
+            var confirmacion = confirm('¿Estas seguro que desas salir de SANBURGER?');
+            if (confirmacion) {
+                var url ="{% url 'logout'%}";            
+                window.location.href = url;
+            } 
+            else {
+                alert('Operación cancelada');
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var inicio = document.getElementById('inicio');
+        inicio.addEventListener('click', function(event) {
+            var url ="{% url 'calidad'%}";            
+            window.location.href = url;
+        });
+    </script>
+    <script type="text/javascript">
+        var mas= document.getElementById('mas');
+        var menos= document.getElementById('menos');
+        var cantidad=document.getElementById('cantidad_seleccionada');
+
+         mas.addEventListener('click', function(event) {
+            var valorActual = parseInt(cantidad.textContent);
+            
+            cantidad.textContent = valorActual + 1;
+        });
+        menos.addEventListener('click', function(event) {
+            var valorActual = parseInt(cantidad.textContent);
+            if (valorActual > 0) {
+                cantidad.textContent = valorActual - 1;
+            }
+        });
+    </script>
+
+
+</html>

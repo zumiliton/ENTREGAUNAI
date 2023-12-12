@@ -1,0 +1,123 @@
+[
+{
+  "model": "sanburgerapp.establecimiento",
+  "pk": 1,
+  "fields": {
+    "calidad_establecimiento": 1,
+    "nombre_establecimiento": "GOIKO-GRILL",
+    "ubicacion": "Calle Altamira Bajo Izquierda 19",
+    "hora_apertura": "09:00:00",
+    "hora_cierre": "18:00:00"
+  }
+},
+{
+  "model": "sanburgerapp.establecimiento",
+  "pk": 2,
+  "fields": {
+    "calidad_establecimiento": 2,
+    "nombre_establecimiento": "KAI",
+    "ubicacion": "Juan Avelino Barriola 94",
+    "hora_apertura": "09:00:00",
+    "hora_cierre": "21:00:00"
+  }
+},
+{
+  "model": "sanburgerapp.establecimiento",
+  "pk": 3,
+  "fields": {
+    "calidad_establecimiento": 3,
+    "nombre_establecimiento": "MCDONALDS",
+    "ubicacion": "Puelaberri Hiribidea 69",
+    "hora_apertura": "08:00:00",
+    "hora_cierre": "22:00:00"
+  }
+},
+{
+  "model": "sanburgerapp.establecimiento",
+  "pk": 4,
+  "fields": {
+    "calidad_establecimiento": 1,
+    "nombre_establecimiento": "FILE MI�ON",
+    "ubicacion": "Txeta Etxea 94",
+    "hora_apertura": "10:00:00",
+    "hora_cierre": "03:00:00"
+  }
+},
+{
+  "model": "sanburgerapp.establecimiento",
+  "pk": 5,
+  "fields": {
+    "calidad_establecimiento": 2,
+    "nombre_establecimiento": "CHEESE PARADISE",
+    "ubicacion": "Calle Prim 88",
+    "hora_apertura": "07:00:00",
+    "hora_cierre": "21:00:00"
+  }
+},
+{
+  "model": "sanburgerapp.establecimiento",
+  "pk": 6,
+  "fields": {
+    "calidad_establecimiento": 3,
+    "nombre_establecimiento": "BURGER KING",
+    "ubicacion": "Urbil Aldea",
+    "hora_apertura": "09:00:00",
+    "hora_cierre": "19:00:00"
+  }
+},
+{
+  "model": "sanburgerapp.establecimiento",
+  "pk": 7,
+  "fields": {
+    "calidad_establecimiento": 1,
+    "nombre_establecimiento": "WRAP CAVIAR",
+    "ubicacion": "Etxadi Pasalekua",
+    "hora_apertura": "07:00:00",
+    "hora_cierre": "23:00:00"
+  }
+},
+{
+  "model": "sanburgerapp.establecimiento",
+  "pk": 8,
+  "fields": {
+    "calidad_establecimiento": 2,
+    "nombre_establecimiento": "B&F",
+    "ubicacion": "Lasarte Oria",
+    "hora_apertura": "06:00:00",
+    "hora_cierre": "15:00:00"
+  }
+},
+{
+  "model": "sanburgerapp.establecimiento",
+  "pk": 9,
+  "fields": {
+    "calidad_establecimiento": 3,
+    "nombre_establecimiento": "CHEAP BURGER",
+    "ubicacion": "Calle Easo 37",
+    "hora_apertura": "10:00:00",
+    "hora_cierre": "18:00:00"
+  }
+},
+{
+  "model": "sanburgerapp.establecimiento",
+  "pk": 10,
+  "fields": {
+    "calidad_establecimiento": 1,
+    "nombre_establecimiento": "LATIN BURGERS",
+    "ubicacion": "Avenida Madrid 23",
+    "hora_apertura": "07:00:00",
+    "hora_cierre": "02:00:00"
+  }
+},
+{
+  "model": "sanburgerapp.establecimiento",
+  "pk": 11,
+  "fields": {
+    "calidad_establecimiento": 1,
+    "nombre_establecimiento": "SuperBurger",
+    "ubicacion": "Avenida Madrid 25",
+    "hora_apertura": "07:00:00",
+    "hora_cierre": "01:00:00"
+  }
+}
+]

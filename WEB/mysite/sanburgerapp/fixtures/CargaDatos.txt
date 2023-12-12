@@ -1,0 +1,8 @@
+Para cargar datos, la estructura de comando utilizada ha sido:
+    -python manage.py loaddata sanburgerapp/fixtures/usuarios_data.json
+    -(Cambiando el nombre del .json en funcion del modelo)
+
+Para extraer los datos de la BD:
+    -python manage.py dumpdata sanburgerapp.Pedido --indent 2 > pedido_data.json
+    -(teniendo en cuenta el modelo, por ejemplo, para extraer de usuarios, sería sanburgerapp.Usuarios)
+    -Y teniendo en cuenta la generación de un nuevo .json para cada modelo
